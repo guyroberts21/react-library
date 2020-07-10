@@ -7,7 +7,12 @@ export class Book extends Component {
     return (
       <div className="book">
         <BookContent title={this.props.title} />
-        <BookBtns />
+        <BookBtns
+          toggleRead={this.props.toggleRead}
+          removeBook={this.props.removeBook}
+          book={this.props.book}
+          read={this.props.book.read}
+        />
       </div>
     );
   }

@@ -6,7 +6,13 @@ export class BookList extends Component {
     return (
       <div>
         {this.props.books.map((book) => (
-          <Book title={book.title} />
+          <Book
+            key={book.id}
+            title={book.title}
+            toggleRead={this.props.toggleRead}
+            removeBook={this.props.removeBook}
+            book={book}
+          />
         ))}
       </div>
     );
