@@ -1,22 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Book from './Book';
 
-export class BookList extends Component {
-  render() {
-    return (
-      <div>
-        {this.props.books.map((book) => (
-          <Book
-            key={book.id}
-            title={book.title}
-            toggleRead={this.props.toggleRead}
-            removeBook={this.props.removeBook}
-            book={book}
-          />
-        ))}
-      </div>
-    );
-  }
-}
+const BookList = (props) => {
+  const { query, books, toggleRead, removeBook } = props;
+
+  const showingBooks =
+    query === ''
+      ? books
+      : books.filter((b) =>
+          b.title.toLowerCase().includes(query.toLowerCase())
+        );
+
+  return (
+    <div>
+      {showingBooks.map((book) => (
+        <Book
+          key={book.id}
+          title={book.title}
+          toggleRead={toggleRead}
+          removeBook={removeBook}
+          book={book}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default BookList;

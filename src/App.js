@@ -60,6 +60,7 @@ class App extends Component {
           books={this.state.books}
           toggleRead={this.toggleRead}
           removeBook={this.removeBook}
+          query={this.state.query}
         />
       </div>
     );
