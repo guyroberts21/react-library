@@ -13,6 +13,7 @@ export class Header extends Component {
             className="search-books"
             type="text"
             placeholder="Search for book..."
+            onChange={this.props.updateQuery}
           />
         </header>
       </div>
