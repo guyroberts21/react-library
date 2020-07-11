@@ -5,17 +5,12 @@ import BookList from './components/BookList';
 import { uuid } from 'uuidv4';
 import './App.css';
 
+// local storage
+const storage = window.localStorage;
+
 class App extends Component {
   state = {
-    books: [
-      {
-        id: uuid(),
-        title: 'Lord of the Rings',
-        author: 'J.R.R Tolkien',
-        pages: 597,
-        read: false,
-      },
-    ],
+    books: storage.getItem('books') ? JSON.parse(storage.getItem('books')) : [],
     query: '',
   };
 
@@ -26,18 +21,24 @@ class App extends Component {
   };
 
   addBook = (title, author, pages) => {
-    this.setState((prevState) => ({
-      books: [
-        ...prevState.books,
-        { id: uuid(), title, author, pages, read: false },
-      ],
-    }));
+    this.setState(
+      (prevState) => ({
+        books: [
+          ...prevState.books,
+          { id: uuid(), title, author, pages, read: false },
+        ],
+      }),
+      () => storage.setItem('books', JSON.stringify(this.state.books))
+    );
   };
 
   removeBook = (id) => {
-    this.setState((prevState) => ({
-      books: prevState.books.filter((b) => b.id !== id),
-    }));
+    this.setState(
+      (prevState) => ({
+        books: prevState.books.filter((b) => b.id !== id),
+      }),
+      () => storage.setItem('books', JSON.stringify(this.state.books))
+    );
   };
 
   // Changing the state of a property on an individual object was harder than I thought
