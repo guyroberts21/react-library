@@ -4,8 +4,11 @@ const BookBtns = (props) => {
   const { toggleRead, book, removeBook } = props;
 
   return (
-    <div>
-      <button className="book-read-btn" onClick={() => toggleRead(book.id)}>
+    <div className="book-btns">
+      <button
+        className={book.read ? 'book-read-btn' : 'book-read-btn not-read'}
+        onClick={() => toggleRead(book.id)}
+      >
         {book.read ? 'Read' : 'Not Read'}
       </button>
       <button className="book-del-btn" onClick={() => removeBook(book.id)}>

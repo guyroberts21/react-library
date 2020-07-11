@@ -1,16 +1,135 @@
 .library-header {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid rgba(236, 54, 141, 0.6);
+  margin-bottom: 30px;
 }
 
 .header-title {
+}
+
+.logo {
+  position: relative;
+  width: 100px;
+  padding: 20px;
+  transform: rotate(20deg);
+}
+
+.page-logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  min-height: 32px;
 }
 
 .search-books {
   background-image: url('./icons/search.svg');
   background-repeat: no-repeat;
   background-position: 20px center;
-  background-size: 1.8em;
-  padding: 20px 20px 20px 60px;
-  font-size: 1.2em;
+  background-size: 1.4em;
+  padding: 5px 5px 5px 60px;
+  font-size: 1.1em;
+  background-color: transparent;
+  border: none;
+}
+
+.search-books:focus {
+  border: none;
+}
+
+.search-books::placeholder {
+  color: rgb(245, 237, 240);
+}
+
+form {
+  margin: 20px 0 0 20px;
+}
+
+input {
+  padding: 10px;
+  margin-right: 15px;
+}
+
+/* Remove default outlining on inputs and buttons */
+input:focus {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.add-book {
+  padding: 10px 20px;
+  background-color: rgb(236, 54, 141);
+  color: rgb(245, 237, 240);
+}
+
+/* Book styles */
+.books-list {
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.book {
+  width: 150px;
+  height: 200px;
+  background-color: rgb(46, 0, 20);
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 7px 1px 3px 1px rgba(245, 237, 240, 0.4);
+}
+
+.book:hover {
+  background-color: rgba(46, 0, 20, 0.4);
+}
+
+.book-btns {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.book-btns button {
+  border: 0.5px solid rgb(46, 0, 20);
+  cursor: pointer;
+}
+
+.book-read-btn {
+  width: 80%;
+  padding: 5px 15px;
+  background-color: rgb(81, 229, 255);
+  border-bottom-left-radius: 10px;
+}
+
+.book-read-btn.not-read {
+  background-color: rgb(245, 237, 240);
+}
+
+.book-del-btn {
+  width: 20%;
+  padding: 5px;
+  background-color: rgb(236, 54, 141);
+  color: rgb(245, 237, 240);
+  border-bottom-right-radius: 10px;
+}
+
+.book-content {
+  padding: 5px 5px 0 10px;
+}
+
+.book-title {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+.book-author,
+.book-pages {
+  opacity: 0.75;
+}
+
+.book-pages {
+  text-align: center;
 }

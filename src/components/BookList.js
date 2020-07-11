@@ -12,11 +12,13 @@ const BookList = (props) => {
         );
 
   return (
-    <div>
+    <div className="books-list">
       {showingBooks.map((book) => (
         <Book
           key={book.id}
           title={book.title}
+          author={book.author}
+          pages={book.pages}
           toggleRead={toggleRead}
           removeBook={removeBook}
           book={book}

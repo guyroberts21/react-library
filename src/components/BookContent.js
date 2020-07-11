@@ -2,8 +2,10 @@ import React from 'react';
 
 const BookContent = (props) => {
   return (
-    <div>
-      <p>{props.title}</p>
+    <div className="book-content">
+      <p className="book-title">{props.title}</p>
+      <p className="book-author">- By {props.author}</p>
+      <p className="book-pages">{props.pages}</p>
     </div>
   );
 };

@@ -47,7 +47,9 @@ export class AddBook extends Component {
           placeholder="No. of pages"
           onChange={this.updateQuery}
         />
-        <button disabled={this.isDisabled()}>Add</button>
+        <button className="add-book" disabled={this.isDisabled()}>
+          Add
+        </button>
       </form>
     );
   }

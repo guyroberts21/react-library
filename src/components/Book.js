@@ -3,11 +3,11 @@ import BookContent from './BookContent';
 import BookBtns from './BookBtns';
 
 const Book = (props) => {
-  const { title, toggleRead, removeBook, book } = props;
+  const { title, author, pages, toggleRead, removeBook, book } = props;
 
   return (
     <div className="book">
-      <BookContent title={title} />
+      <BookContent title={title} author={author} pages={pages} />
       <BookBtns
         toggleRead={toggleRead}
         removeBook={removeBook}
